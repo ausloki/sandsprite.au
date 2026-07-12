@@ -1,0 +1,25 @@
+<svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a Kelpie dog">
+  <defs>
+    <style>
+      .fur { fill: #b5651d; }
+      .fur-dark { fill: #6b3f2a; }
+      .ground { fill: #e6dccb; }
+    </style>
+  </defs>
+  <ellipse class="ground" cx="200" cy="290" rx="170" ry="18"/>
+  <!-- body -->
+  <path class="fur" d="M95 190c-10-35 15-70 55-78 15-3 32-2 46 6 22-9 46-6 60 10 16 18 14 46-4 62-8 7-19 12-30 13l-4 34h-24l-2-30c-24 4-49-1-67-14-14-10-25-25-30-3z"/>
+  <!-- head -->
+  <path class="fur-dark" d="M270 108c8-22 30-38 52-34 16 3 26 17 24 33-2 14-14 25-28 30l6 22-20 6-10-24c-12 0-24-6-24-33z"/>
+  <!-- ear -->
+  <path class="fur-dark" d="M312 96l14-30 6 32z"/>
+  <!-- legs -->
+  <rect class="fur-dark" x="130" y="220" width="14" height="60" rx="6"/>
+  <rect class="fur-dark" x="170" y="228" width="14" height="52" rx="6"/>
+  <rect class="fur-dark" x="230" y="228" width="14" height="52" rx="6"/>
+  <rect class="fur-dark" x="266" y="220" width="14" height="60" rx="6"/>
+  <!-- tail -->
+  <path class="fur-dark" d="M96 188c-18 4-34 18-36 36 14-4 30-16 36-36z"/>
+  <!-- eye -->
+  <circle cx="300" cy="112" r="3.5" fill="#2b241d"/>
+</svg>
