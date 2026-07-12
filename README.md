@@ -37,15 +37,6 @@ Placeholders you'll want to replace before launch:
 - **Grooming/boarding/daycare** (`services.html`): each service now links to the real PetManager booking portal (`https://petmanager.app/portal?token=...`, taken from the live sandsprite-kelpies.com site), plus a prominent "Open booking portal" button.
 - **Contact page**: added a "Get directions on Google Maps" link and an embedded Google Maps iframe (using the free no-API-key `output=embed` format, keyed off the street address). I couldn't verify the embed renders in this sandboxed preview environment (it has no external network access, so the map request was blocked there) — worth a quick check in a real browser after deploying. If it doesn't render, swapping in a proper Google Maps **Embed API** key is the standard fix.
 
-## Local preview
-
-No build tools needed — just open `index.html` in a browser, or serve the folder locally:
-
-```
-python3 -m http.server 8000
-```
-
-then visit `http://localhost:8000`.
 
 ## Deploying to sandsprite.au
 
