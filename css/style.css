@@ -18,6 +18,14 @@
   --font-serif: Georgia, "Times New Roman", serif;
   --shadow-sm: 0 1px 3px rgba(43, 36, 29, 0.08);
   --shadow-md: 0 6px 20px rgba(43, 36, 29, 0.12);
+
+  /* Footer sits on --color-primary-dark, which flips light/dark below —
+     these pair with whichever shade that resolves to, so footer text
+     always contrasts against its own background. */
+  --color-footer-text: #f1e9df;
+  --color-footer-text-muted: #cbb9a4;
+  --color-footer-border: rgba(241, 233, 223, 0.2);
+  --footer-logo-filter: brightness(0) invert(1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,6 +41,12 @@
     --color-border: #453a2f;
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
     --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.5);
+
+    /* --color-primary-dark is now light, so footer text/border/logo flip to dark */
+    --color-footer-text: #4a2b1c;
+    --color-footer-text-muted: #6b3f2a;
+    --color-footer-border: rgba(43, 27, 16, 0.25);
+    --footer-logo-filter: none;
   }
 }
 
@@ -397,16 +411,16 @@ input:focus, textarea:focus, select:focus {
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--color-primary-dark);
-  color: #f1e9df;
+  color: var(--color-footer-text);
   padding: 2.5rem 0 1.5rem;
   margin-top: 2rem;
 }
-.site-footer a { color: #f1e9df; }
+.site-footer a { color: var(--color-footer-text); }
 .footer-logo {
   width: 140px;
   height: auto;
   margin-bottom: 0.75rem;
-  filter: brightness(0) invert(1);
+  filter: var(--footer-logo-filter);
 }
 .footer-grid {
   display: grid;
@@ -418,16 +432,16 @@ input:focus, textarea:focus, select:focus {
   .footer-grid { grid-template-columns: repeat(3, 1fr); }
 }
 .footer-grid h4 {
-  color: #f1e9df;
+  color: var(--color-footer-text);
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 .footer-bottom {
-  border-top: 1px solid rgba(241, 233, 223, 0.2);
+  border-top: 1px solid var(--color-footer-border);
   padding-top: 1.25rem;
   font-size: 0.85rem;
-  color: #cbb9a4;
+  color: var(--color-footer-text-muted);
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
