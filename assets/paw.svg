@@ -1,0 +1,10 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sandsprite paw print logo">
+  <circle cx="50" cy="50" r="48" fill="#6b3f2a"/>
+  <g fill="#f1e2d0">
+    <ellipse cx="50" cy="62" rx="22" ry="18"/>
+    <ellipse cx="24" cy="38" rx="9" ry="12" transform="rotate(-20 24 38)"/>
+    <ellipse cx="42" cy="26" rx="9" ry="13" transform="rotate(-8 42 26)"/>
+    <ellipse cx="60" cy="26" rx="9" ry="13" transform="rotate(8 60 26)"/>
+    <ellipse cx="78" cy="38" rx="9" ry="12" transform="rotate(20 78 38)"/>
+  </g>
+</svg>

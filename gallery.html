@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery | Sandsprite Kennels</title>
+<meta name="description" content="Photo gallery of Sandsprite Australian Kelpies.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav-bar">
+    <a class="brand" href="index.html">
+      <img src="assets/favicon.png" alt="" width="40" height="40">
+      Sandsprite Kennels
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+      <li><a href="about.html">My Kelpies</a></li>
+      <li><a href="litters.html">Litters</a></li>
+      <li><a href="stud.html">Boys at Stud</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h1>Gallery</h1>
+        <p class="muted">Recent photos from our Facebook page, newest first.</p>
+      </div>
+
+      <div class="gallery-grid" aria-label="Photo gallery">
+        <figure class="gallery-item">
+          <img class="photo" src="assets/gallery/puppies-trio-2025-06.jpg" alt="Three chocolate Kelpie puppies sitting together — beautiful kelpie babies still looking for their forever homes" loading="lazy">
+          <figcaption>June 2025 litter</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img class="photo" src="assets/gallery/puppy-closeup-2025-06.jpg" alt="Close-up of a chocolate Kelpie puppy's face — beautiful kelpie babies still looking for their forever homes" loading="lazy">
+          <figcaption>June 2025 litter</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img class="photo" src="assets/gallery/puppies-pair-2025-06.jpg" alt="Two chocolate Kelpie puppies side by side — beautiful kelpie babies still looking for their forever homes" loading="lazy">
+          <figcaption>June 2025 litter</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img class="photo" src="assets/gallery/black-puppy-2024-06.jpg" alt="A black puppy sitting on the floor beside a crate — my new assistant enjoying the perks of mum working from home" loading="lazy">
+          <figcaption>June 2024</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img class="photo" src="assets/gallery/western-classic-show-2024-03.jpg" alt="Two women standing with a chocolate Kelpie and a show ribbon — another Western Classic done and dusted" loading="lazy">
+          <figcaption>Western Classic, March 2024</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img class="photo" src="assets/gallery/show-team-ribbon-2024-02.jpg" alt="The owner sitting on grass with three Kelpies and a show ribbon" loading="lazy">
+          <figcaption>Show results, Feb 2024</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img class="photo" src="assets/gallery/breeders-team-ribbon-2024-02.jpg" alt="A W.A. Kennel Club Breeders Team 1st place ribbon" loading="lazy">
+          <figcaption>Breeders Team, 1st &mdash; Feb 2024</figcaption>
+        </figure>
+      </div>
+
+      <p class="muted center" style="margin-top:1.5rem;">Follow us on <a href="https://www.facebook.com/p/Sandsprite-Kennels-61556303832501/" rel="noopener" target="_blank">Facebook</a> for the latest photos.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="assets/logo-sign.svg" alt="Sandsprite Kennels" width="140" height="85">
+        <p>220 Corncrake Court<br>Southern River, WA 6110<br>Australia</p>
+        <p style="margin-top:0.5rem;font-size:0.85rem;">Daycare 7am&ndash;6pm<br>Office 9&ndash;10am &amp; 4:30&ndash;6pm</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="tel:0893984725">(08) 9398 4725</a><br>
+        <a href="contact.html">Send an enquiry</a></p>
+      </div>
+      <div>
+        <h4>Follow along</h4>
+        <p><a href="https://www.facebook.com/p/Sandsprite-Kennels-61556303832501/" rel="noopener" target="_blank">Facebook</a><br>
+        <a href="https://www.dogzonline.com.au/breeds/member.asp?name=trinity" rel="noopener" target="_blank">Dogz Online listing</a><br>
+        <a href="https://petsonline.com.au/breeder/sandsprite/" rel="noopener" target="_blank">Pets Online profile</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Sandsprite Kennels &amp; Cattery. All rights reserved.</span>
+      <span>sandsprite.au</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
