@@ -9,6 +9,8 @@ Plain HTML/CSS/JS — no build step, no framework. This keeps the site fast, eas
 - `index.html`, `about.html`, `litters.html`, `stud.html`, `services.html`, `gallery.html`, `contact.html` — one file per page, sharing the same header/nav/footer markup.
 - `css/style.css` — single shared stylesheet, mobile-first with breakpoints at 600px / 700px / 900px.
 - `js/main.js` — small script for the mobile hamburger nav toggle only. All content is visible without JS.
+- `js/litters.js` — fetches `data/litters.csv` and fills in the "Previous litters" table on `litters.html`. If the CSV can't be loaded (or JS is off), the static fallback row already in the HTML stays put.
+- `data/litters.csv` — the "Previous litters" table, one row per litter. Columns: `Litter,Sire,Dam,Colours,Status`. Edit this file (in a text editor, Excel/Numbers, or Google Sheets exported as CSV) to add/update litters — no HTML editing needed. Wrap any field containing a comma in double quotes.
 - `assets/` — vector recreations of the kennel's real sign (walking figure + dogs), based on the owner's photo of the sign and confirmed against a second photo of it found on the kennel's Facebook page:
   - `logo-mark.svg` — compact icon-only version, used as the favicon and nav brand mark (small sizes).
   - `logo-sign.svg` — full recreation (silhouette scene + "Sandsprite Kennels" wordmark, sign legs/posts omitted), used large on the homepage hero and in the footer. On the footer's dark background it's recoloured white via a CSS `filter` (`.footer-logo` in `style.css`), since the source art is a single dark colour.
