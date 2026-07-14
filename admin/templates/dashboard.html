@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Sandsprite Admin — Add photos</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .admin-wrap { max-width: 900px; margin: 2rem auto; padding: 0 1.25rem; }
+  .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+  .drop-zone {
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .drop-zone.drag-over { border-color: var(--color-accent); background: var(--color-accent-light); }
+  .drop-zone .filename { font-weight: 700; color: var(--color-text); margin-top: 0.5rem; }
+  .section-card { margin-bottom: 2rem; }
+  .success-banner {
+    background: #e6f4ea; border: 1px solid #b7dfc2; color: #1e4620;
+    border-radius: var(--radius); padding: 0.85rem 1.1rem; margin-bottom: 1.5rem;
+  }
+</style>
+</head>
+<body>
+<div class="admin-wrap">
+  <div class="admin-header">
+    <h1 style="margin:0;font-size:1.6rem;">Add photos</h1>
+    <a class="btn" href="{{ url_for('logout') }}">Log out</a>
+  </div>
+
+  <div id="success-banner" class="success-banner" style="display:none;"></div>
+
+  <p class="muted">Uploading here saves the photo and adds a row to the matching CSV file — it does not go live until you (or Cory) commit and push the change. See <code>admin/README.md</code>.</p>
+
+  {% for key, cfg in sections.items() %}
+  <div class="card section-card">
+    <h2 style="margin-top:0;">{{ cfg.label }}</h2>
+    <form class="upload-form" method="post" action="{{ url_for('upload', section=key) }}" enctype="multipart/form-data" data-section="{{ key }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+
+      <div class="drop-zone" tabindex="0" role="button" aria-label="Choose or drop a photo for {{ cfg.label }}">
+        <span class="prompt">Drag &amp; drop a photo here, or click to choose one</span>
+        <div class="filename"></div>
+      </div>
+      <input type="file" name="photo" accept=".jpg,.jpeg,.png,.webp" hidden required>
+
+      <div class="form-grid two-col">
+        {% if key == "gallery" %}
+        <div>
+          <label>Date</label>
+          <input type="date" name="date">
+        </div>
+        <div>
+          <label>Caption (short label shown on the photo)</label>
+          <input type="text" name="caption" placeholder="e.g. June 2026 litter">
+        </div>
+        <div class="full">
+          <label>Alt text (for accessibility)</label>
+          <input type="text" name="alt" placeholder="Describe the photo">
+        </div>
+        <div class="full">
+          <label>Description (optional, shown under the caption)</label>
+          <input type="text" name="description">
+        </div>
+        {% elif key == "litters" %}
+        <div>
+          <label>Caption (optional overlay label)</label>
+          <input type="text" name="caption">
+        </div>
+        <div>
+          <label>Alt text (for accessibility)</label>
+          <input type="text" name="alt" placeholder="Describe the photo">
+        </div>
+        <div class="full">
+          <label>Description (optional, shown under the caption)</label>
+          <input type="text" name="description">
+        </div>
+        {% else %}
+        <div>
+          <label>Name</label>
+          <input type="text" name="name" placeholder="TBC">
+        </div>
+        <div>
+          <label>Title</label>
+          <input type="text" name="title" placeholder="TBC">
+        </div>
+        <div class="full">
+          <label>Description (explains the title/award, shown on the photo)</label>
+          <input type="text" name="description">
+        </div>
+        {% endif %}
+      </div>
+
+      <button class="btn btn-solid" type="submit" style="margin-top:1rem;">Upload</button>
+    </form>
+  </div>
+  {% endfor %}
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var params = new URLSearchParams(window.location.search);
+  var uploaded = params.get("uploaded");
+  if (uploaded) {
+    var banner = document.getElementById("success-banner");
+    banner.textContent = "Photo added to " + uploaded + ". Remember to commit and push to publish it.";
+    banner.style.display = "block";
+  }
+
+  document.querySelectorAll(".upload-form").forEach(function (form) {
+    var dropZone = form.querySelector(".drop-zone");
+    var input = form.querySelector('input[type="file"]');
+    var filenameEl = form.querySelector(".filename");
+
+    function showFile(file) {
+      filenameEl.textContent = file ? file.name : "";
+    }
+
+    dropZone.addEventListener("click", function () { input.click(); });
+    dropZone.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); input.click(); }
+    });
+    input.addEventListener("change", function () {
+      showFile(input.files[0]);
+    });
+    dropZone.addEventListener("dragover", function (e) {
+      e.preventDefault();
+      dropZone.classList.add("drag-over");
+    });
+    dropZone.addEventListener("dragleave", function () {
+      dropZone.classList.remove("drag-over");
+    });
+    dropZone.addEventListener("drop", function (e) {
+      e.preventDefault();
+      dropZone.classList.remove("drag-over");
+      var file = e.dataTransfer.files[0];
+      if (file) {
+        input.files = e.dataTransfer.files;
+        showFile(file);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
