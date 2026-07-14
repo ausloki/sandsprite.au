@@ -347,6 +347,39 @@ p { margin: 0 0 1em; }
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.gallery-item figcaption.has-description {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  line-height: 1.35;
+}
+.gallery-item figcaption .desc {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  opacity: 0.85;
+  margin-top: 0.15rem;
+}
+
+/* ---------- Kelpie titleholder tiles (overlay caption explains the title/award) ---------- */
+.kelpie-item figcaption {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  line-height: 1.35;
+  padding: 0.6rem 0.75rem;
+}
+.kelpie-item figcaption strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+.kelpie-item figcaption span {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
 
 /* ---------- Tables (litters / pedigree-ish info) ---------- */
 .table-wrap {

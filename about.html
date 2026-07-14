@@ -81,22 +81,32 @@
         <h2>Some of our dogs</h2>
         <p class="muted">A few of the Kelpies behind our breeding program — full pedigrees and photos coming soon.</p>
       </div>
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="gallery-item" style="margin-bottom:1rem;"><img class="photo" src="assets/gallery/western-classic-show-2024-03.jpg" alt="A chocolate Kelpie at the Western Classic show" loading="lazy"></div>
-          <h3>Name &amp; title — TBC</h3>
-          <p class="muted">Pictured at the Western Classic, March 2024. Full pedigree and titles to be added.</p>
-        </div>
-        <div class="card">
-          <div class="gallery-item" style="margin-bottom:1rem;"><img class="photo" src="assets/gallery/show-team-ribbon-2024-02.jpg" alt="Sandria with three Kelpies and a show ribbon" loading="lazy"></div>
-          <h3>Name &amp; title — TBC</h3>
-          <p class="muted">Pictured at a show, February 2024. Full pedigree and titles to be added.</p>
-        </div>
-        <div class="card">
-          <div class="gallery-item" style="margin-bottom:1rem;"><img src="assets/paw.svg" alt="" width="50" height="50"></div>
-          <h3>Name &amp; title — TBC</h3>
-          <p class="muted">Profile, pedigree and titles to be added.</p>
-        </div>
+      <div class="grid grid-3" id="kelpies-grid" aria-label="Titleholders and awards">
+        <figure class="gallery-item kelpie-item">
+          <a href="assets/kelpies-photos/western-classic-show-2024-03.jpg" target="_blank" rel="noopener">
+            <img class="photo" src="assets/kelpies-photos/western-classic-show-2024-03.jpg" alt="A chocolate Kelpie at the Western Classic show" loading="lazy">
+          </a>
+          <figcaption>
+            <strong>Name &amp; title — TBC</strong>
+            <span>Pictured at the Western Classic, March 2024. Full pedigree and titles to be added.</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item kelpie-item">
+          <a href="assets/kelpies-photos/show-team-ribbon-2024-02.jpg" target="_blank" rel="noopener">
+            <img class="photo" src="assets/kelpies-photos/show-team-ribbon-2024-02.jpg" alt="Sandria with three Kelpies and a show ribbon" loading="lazy">
+          </a>
+          <figcaption>
+            <strong>Name &amp; title — TBC</strong>
+            <span>Pictured at a show, February 2024. Full pedigree and titles to be added.</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item kelpie-item">
+          <img src="assets/paw.svg" alt="" width="50" height="50">
+          <figcaption>
+            <strong>Name &amp; title — TBC</strong>
+            <span>Profile, pedigree and titles to be added.</span>
+          </figcaption>
+        </figure>
       </div>
       <p class="center muted" style="margin-top:1.5rem;">In the meantime, get in touch and we're happy to talk through our dogs directly, or see our <a href="https://www.dogzonline.com.au/breeds/member.asp?name=trinity" rel="noopener" target="_blank">Dogz Online listing</a>.</p>
       <p class="center"><a class="btn btn-solid" href="contact.html">Ask about our dogs</a></p>
@@ -133,6 +143,7 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/kelpies.js"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
