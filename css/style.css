@@ -326,6 +326,11 @@ p { margin: 0 0 1em; }
   justify-content: center;
 }
 .gallery-item svg { width: 45%; opacity: 0.55; }
+.gallery-item > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .gallery-item img.photo {
   width: 100%;
   height: 100%;
