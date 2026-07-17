@@ -93,6 +93,7 @@ h1, h2, h3, h4 {
 h1 { font-size: clamp(1.8rem, 5vw, 2.75rem); }
 h2 { font-size: clamp(1.4rem, 3.5vw, 2rem); }
 h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); }
+.unavailable-note { font-size: 1.1rem; }
 
 p { margin: 0 0 1em; }
 
@@ -241,6 +242,21 @@ p { margin: 0 0 1em; }
   background: transparent;
 }
 .btn:hover { text-decoration: none; background: var(--color-primary); color: #fff; }
+.btn:disabled,
+.btn[disabled] {
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  background: transparent;
+  cursor: not-allowed;
+  opacity: 0.65;
+  font-family: inherit;
+  font-size: inherit;
+}
+.btn:disabled:hover,
+.btn[disabled]:hover {
+  background: transparent;
+  color: var(--color-text-muted);
+}
 .btn-solid {
   background: var(--color-primary);
   color: #fff;

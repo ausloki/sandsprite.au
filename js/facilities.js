@@ -46,7 +46,7 @@
   if (!grid) return;
 
   var IMAGE_DIR = "assets/facilities/";
-  var CATEGORY_ORDER = ["Kitchenette", "Boarding suites", "Cattery", "Daycare play yard", "Outdoor runs"];
+  var CATEGORY_ORDER = ["Kitchenette", "Boarding suites", "Cattery", "Daycare play yard", "Outdoor runs", "Large Day Pens", "Small Day Pens"];
 
   // ---------- Lightbox (shared across all categories) ----------
   var lightbox = document.createElement("div");
